@@ -159,9 +159,81 @@ def del_subject(request, pk):
     return render(request, 'confirms/confirm_subject.html', {'subject': subject})
 
 def del_teacher(request, pk):
-    teacher= get_object_or_404(Teacher, pk=pk)
+    teacher = get_object_or_404(Teacher, pk=pk)
     if request.method == 'POST':
         teacher.delete()
         return redirect('teachers')
 
     return render(request, 'confirms/confirm_teacher.html', {'teacher': teacher})
+
+def update_faculty(request, pk):
+    faculty = get_object_or_404(Faculty, pk=pk)
+    if request.method == 'POST':
+        form = FacultyForm(request.POST, instance=faculty)
+        if form.is_valid():
+            form.save()
+            return redirect('faculties')
+        else:
+            return HttpResponse('Form is invalid')
+    form = FacultyForm(instance=faculty)
+    return render(request, 'forms/faculty_form.html', {'faculty': form})
+
+def update_group(request, pk):
+    group = get_object_or_404(Group, pk=pk)
+    if request.method == 'POST':
+        form = GroupForm(request.POST, instance=group)
+        if form.is_valid():
+            form.save()
+            return redirect('faculties')
+        else:
+            return HttpResponse('Form is invalid')
+    form = GroupForm(instance=group)
+    return render(request, 'forms/group_form.html', {'group': form})
+
+def update_department(request, pk):
+    department = get_object_or_404(Department, pk=pk)
+    if request.method == 'POST':
+        form = DepartmentForm(request.POST, instance=department)
+        if form.is_valid():
+            form.save()
+            return redirect('faculties')
+        else:
+            return HttpResponse('Form is invalid')
+    form = DepartmentForm(instance=department)
+    return render(request, 'forms/department_form.html', {'department': form})
+
+def update_student(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+            return redirect('faculties')
+        else:
+            return HttpResponse('Form is invalid')
+    form = StudentForm(instance=student)
+    return render(request, 'forms/student_form.html', {'student': form})
+
+def update_subject(request, pk):
+    subject = get_object_or_404(Student, pk=pk)
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=subject)
+        if form.is_valid():
+            form.save()
+            return redirect('faculties')
+        else:
+            return HttpResponse('Form is invalid')
+    form = StudentForm(instance=subject)
+    return render(request, 'forms/subject_form.html', {'subject': form})
+
+def update_teacher(request, pk):
+    teacher = get_object_or_404(Teacher, pk=pk)
+    if request.method == 'POST':
+        form = TeacherForm(request.POST, instance=teacher)
+        if form.is_valid():
+            form.save()
+            return redirect('faculties')
+        else:
+            return HttpResponse('Form is invalid')
+    form = TeacherForm(instance=teacher)
+    return render(request, 'forms/teacher_form.html', {'teacher': form})

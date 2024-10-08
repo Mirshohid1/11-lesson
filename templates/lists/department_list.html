@@ -154,7 +154,7 @@
                                         <td>{{ department.name }}</td>
                                         <td>
                                             <div class="table-data-feature">
-                                                <a class="item" data-toggle="tooltip" href="#" data-placement="top"
+                                                <a class="item" data-toggle="tooltip" href="{% url 'update_department' pk=department.pk %}" data-placement="top"
                                                    title="Edit">
                                                     <i class="zmdi zmdi-edit text-warning"></i>
                                                 </a>
