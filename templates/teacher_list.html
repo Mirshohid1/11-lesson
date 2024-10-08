@@ -143,7 +143,9 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Subject</th>
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
@@ -151,7 +153,9 @@
                                     {% for teacher in teachers %}
                                     <tr>
                                         <td>{{ teacher.pk }}</td>
-                                        <td>{{ teacher.name }}</td>
+                                        <td>{{ teacher.first_name }}</td>
+                                        <td>{{ teacher.last_name }}</td>
+                                        <td>{{ teacher.subject.name }}</td>
                                         <td>
                                             <div class="table-data-feature">
                                                 <a class="item" data-toggle="tooltip" href="#" data-placement="top"
