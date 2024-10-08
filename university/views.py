@@ -59,10 +59,15 @@ def department_list(request):
 
 def department_add(request):
     if request.method == 'POST':
-        form = DepartmentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('department_list')
+        department = DepartmentForm(request.POST)
+        if department.is_valid():
+            department.save()
+            return redirect('departments')
+        else:
+            return HttpResponse("Form is invalid.")
+    department = DepartmentForm()
+    ctx = {'department': department}
+    return render(request, 'department_form.html', ctx)
 
 def student_list(request):
     students = Student.objects.all()
@@ -70,25 +75,44 @@ def student_list(request):
 
 def student_add(request):
     if request.method == 'POST':
-        form = StudentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('students_list')
-    else:
-        form = StudentForm()
-
-    return render(request, 'student_form.html', {'form': form})
+        student = StudentForm(request.POST)
+        if student.is_valid():
+            student.save()
+            return redirect('groups')
+        else:
+            return HttpResponse("Form is invalid.")
+    student = StudentForm()
+    ctx = {'student': student}
+    return render(request, 'student_form.html', ctx)
 
 def subject_list(request):
     subjects = Subject.objects.all()
     return render(request, 'subject_list.html', {'subjects': subjects})
 
 def subject_add(request):
-    pass
+    if request.method == 'POST':
+        subject = SubjectForm(request.POST)
+        if subject.is_valid():
+            subject.save()
+            return redirect('teachers')
+        else:
+            return HttpResponse("Form is invalid.")
+    subject = SubjectForm()
+    ctx = {'subject': subject}
+    return render(request, 'subject_form.html', ctx)
 
 def teacher_list(request):
     teachers = Teacher.objects.all()
     return render(request, 'teacher_list.html', {'teachers': teachers})
 
 def teacher_add(request):
-    pass
+    if request.method == 'POST':
+        teacher = TeacherForm(request.POST)
+        if teacher.is_valid():
+            teacher.save()
+            return redirect('teachers')
+        else:
+            return HttpResponse("Form is invalid.")
+    teacher = TeacherForm()
+    ctx = {'teacher': teacher}
+    return render(request, 'teacher_form.html', ctx)

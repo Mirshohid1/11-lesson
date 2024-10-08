@@ -142,10 +142,10 @@
                                     <small> Form</small>
                                 </div>
                                 <div class="card-body card-block">
-                                    <form>
+                                    <form method="post" action="{% url 'group_form' %}">
                                         {% csrf_token %}
                                         <div class="form-group">
-                                            {{ form.as_p }}
+                                            {{ group.as_p }}
                                         </div>
                                         <button type="submit" class="btn btn-success btn-md">Add</button>
                                     </form>
