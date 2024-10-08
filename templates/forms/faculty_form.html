@@ -145,8 +145,7 @@
                                     <form method="post" action="{% url 'faculty_form' %}">
                                         {% csrf_token %}
                                         <div class="form-group">
-                                            <label class="form-control-label">Name</label>
-                                            <input type="text" class="form-control" name="name" required>
+                                            {{ faculty.as_p }}
                                         </div>
 
                                         <button type="submit" class="btn btn-success btn-md">Add</button>

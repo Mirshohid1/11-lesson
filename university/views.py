@@ -78,7 +78,7 @@ def student_add(request):
         student = StudentForm(request.POST)
         if student.is_valid():
             student.save()
-            return redirect('groups')
+            return redirect('students')
         else:
             return HttpResponse("Form is invalid.")
     student = StudentForm()
@@ -94,7 +94,7 @@ def subject_add(request):
         subject = SubjectForm(request.POST)
         if subject.is_valid():
             subject.save()
-            return redirect('teachers')
+            return redirect('subjects')
         else:
             return HttpResponse("Form is invalid.")
     subject = SubjectForm()
