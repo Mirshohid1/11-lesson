@@ -40,6 +40,7 @@ class Subject(models.Model):
 class Teacher(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=17, null=True, blank=True)
     subject = models.ForeignKey(Subject, on_delete=SET_NULL, null=True, blank=True)
 
     def __str__(self):
