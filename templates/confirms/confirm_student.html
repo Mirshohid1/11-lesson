@@ -1,7 +1,7 @@
 {% extends 'confirms/confirm_faculty.html' %}
 {% block content %}
-    <div class="container">
-        <h1>Are you sure to delete this '{{ student.first_name }}  {{ student.last_name }}'</h1>
+<div class="container">
+    <h1>Are you sure to delete this '{{ student.first_name }} {{ student.last_name }}'</h1>
     <div class="btn-container">
         <form method="post">
             {% csrf_token %}
@@ -11,9 +11,8 @@
             <a href="{% url 'students' %}" class="btn btn-primary btn-no">No, take me back</a>
         </form>
     </div>
-    </div>
-    <footer>
-        <p>Powered by <a href="https://www.linkedin.com/in/mirshoxid-mirshoxidov-ab8b9b32a/">Mirshoxid Mirshoxidov</a></p>
-    </footer>
-    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</div>
+<footer>
+    <p>Powered by <a href="https://www.linkedin.com/in/mirshoxid-mirshoxidov-ab8b9b32a/">Mirshoxid Mirshoxidov</a></p>
+</footer>
 {% endblock %}

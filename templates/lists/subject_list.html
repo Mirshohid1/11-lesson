@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="overview-wrap">
                         <h2 class="title-1">Subject List</h2>
-                        <a class="au-btn au-btn-icon au-btn--blue" href="{% url 'subject_form' %}">
+                        <a class="au-btn au-btn-icon au-btn--blue" href="{% url 'subject_add' %}">
                             <i class="zmdi zmdi-plus"></i>add</a>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                                 <td>
                                     <div class="table-data-feature">
                                         <a class="item" data-toggle="tooltip"
-                                           href="{% url 'update_subject' pk=subject.pk %}" data-placement="top"
+                                           href="{% url 'subject_update' pk=subject.pk %}" data-placement="top"
                                            title="Edit">
                                             <i class="zmdi zmdi-edit text-warning"></i>
                                         </a>

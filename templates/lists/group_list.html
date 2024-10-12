@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="overview-wrap">
                         <h2 class="title-1">Group List</h2>
-                        <a class="au-btn au-btn-icon au-btn--blue" href="{% url 'group_form' %}">
+                        <a class="au-btn au-btn-icon au-btn--blue" href="{% url 'group_add' %}">
                             <i class="zmdi zmdi-plus"></i>add</a>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                                 <td>
                                     <div class="table-data-feature">
                                         <a class="item" data-toggle="tooltip"
-                                           href="{% url 'update_group' pk=group.pk %}" data-placement="top"
+                                           href="{% url 'group_update' pk=group.pk %}" data-placement="top"
                                            title="Edit">
                                             <i class="zmdi zmdi-edit text-warning"></i>
                                         </a>

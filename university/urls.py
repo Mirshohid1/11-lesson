@@ -1,38 +1,44 @@
 from django.urls import path
 from . import views
 
-
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
+
+    # Faculties
     path('faculties/', views.faculty_list, name='faculties'),
-    path('faculty_form/', views.faculty_add, name='faculty_form'),
+    path('faculty/form/', views.faculty_add, name='faculty_add'),
+    path('faculty/update/<int:pk>/', views.faculty_add, name='faculty_update'),
 
+    # Groups
     path('groups/', views.group_list, name='groups'),
-    path('group_form/', views.group_add, name='group_form'),
+    path('group/form/', views.group_add, name='group_add'),
+    path('group/update/<int:pk>/', views.group_add, name='group_update'),
 
-    path('department_form/', views.department_add, name='department_form'),
+    # Departments
     path('departments/', views.department_list, name='departments'),
+    path('department/form/', views.department_add, name='department_add'),
+    path('department/update/<int:pk>/', views.department_add, name='department_update'),
 
-    path('student_form/', views.student_add, name='student_form'),
+    # Students
     path('students/', views.student_list, name='students'),
+    path('student/form/', views.student_add, name='student_add'),
+    path('student/update/<int:pk>/', views.student_add, name='student_update'),
 
-    path('subject_form/', views.subject_add, name='subject_form'),
+    # Subjects
     path('subjects/', views.subject_list, name='subjects'),
+    path('subject/form/', views.subject_add, name='subject_add'),
+    path('subject/update/<int:pk>/', views.subject_add, name='subject_update'),
 
-    path('teacher/', views.teacher_add, name='teacher_form'),
-    path('teachers', views.teacher_list, name='teachers'),
+    # Teachers
+    path('teachers/', views.teacher_list, name='teachers'),
+    path('teacher/form/', views.teacher_add, name='teacher_add'),
+    path('teacher/update/<int:pk>/', views.teacher_add, name='teacher_update'),
 
-    path('delete_faculty/<int:pk>/', views.del_faculty, name='del_faculty'),
-    path('delete_group/<int:pk>/', views.del_group, name='del_group'),
-    path('delete_department/<int:pk>/', views.del_department, name='del_department'),
-    path('delete_student/<int:pk>/', views.del_student, name='del_student'),
-    path('delete_subject/<int:pk>/', views.del_subject, name='del_subject'),
-    path('delete_teacher/<int:pk>/', views.del_teacher, name='del_teacher'),
-
-    path('update_faculty/<int:pk>', views.update_faculty, name='update_faculty'),
-    path('update_group/<int:pk>', views.update_group, name='update_group'),
-    path('update_department/<int:pk>', views.update_department, name='update_department'),
-    path('update_student/<int:pk>', views.update_student, name='update_student'),
-    path('update_subject/<int:pk>', views.update_subject, name='update_subject'),
-    path('update_teacher/<int:pk>', views.update_teacher, name='update_teacher'),
+    # Delete operations
+    path('delete/faculty/<int:pk>/', views.del_faculty, name='del_faculty'),
+    path('delete/group/<int:pk>/', views.del_group, name='del_group'),
+    path('delete/department/<int:pk>/', views.del_department, name='del_department'),
+    path('delete/student/<int:pk>/', views.del_student, name='del_student'),
+    path('delete/subject/<int:pk>/', views.del_subject, name='del_subject'),
+    path('delete/teacher/<int:pk>/', views.del_teacher, name='del_teacher'),
 ]

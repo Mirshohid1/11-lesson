@@ -85,7 +85,7 @@
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="{% static 'images/icon//avatar_fallen_angel_01.jpg' %}" alt="Loner"/>
+                                                    <img src="{% static 'images/icon/avatar_fallen_angel_01.jpg' %}" alt="Loner"/>
                                                 </a>
                                             </div>
                                             <div class="content">
@@ -130,7 +130,7 @@
                         <div class="col-md-12">
                             <div class="overview-wrap">
                                 <h2 class="title-1">Faculty List</h2>
-                                <a class="au-btn au-btn-icon au-btn--blue" href="{% url 'faculty_form' %}">
+                                <a class="au-btn au-btn-icon au-btn--blue" href="{% url 'faculty_add' %}">
                                     <i class="zmdi zmdi-plus"></i>add</a>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                                         <td>{{ faculty.name }}</td>
                                         <td>
                                             <div class="table-data-feature">
-                                                <a class="item" data-toggle="tooltip" href="{% url 'update_faculty' pk=faculty.pk %}" data-placement="top"
+                                                <a class="item" data-toggle="tooltip" href="{% url 'faculty_update' pk=faculty.pk %}" data-placement="top"
                                                    title="Edit">
                                                     <i class="zmdi zmdi-edit text-warning"></i>
                                                 </a>
